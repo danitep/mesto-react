@@ -112,19 +112,7 @@ function App() {
         <button className="popup__button" type="submit">Да</button>
       </>
     }></PopupWithForm>
-    <template id="image-template">
-      <li className="element">
-        <button className="element__delete" type="button"></button>
-        <img src="#" alt="" className="element__image"/>
-        <div className="element__info">
-          <h2 className="element__title"></h2>
-          <div className="element__container">
-            <button className="element__like" type="button"></button>
-            <p className="element__count">6</p>
-          </div>
-        </div>
-      </li>
-    </template>
+
   </>
   );
 }
