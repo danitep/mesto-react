@@ -89,6 +89,15 @@ class Api {
     })
   }
 
+  changeLikeCardStatus(id, unliked){
+    if(unliked){
+      return this.setLike(id);
+    }
+    else{
+      return this.deleteLike(id);
+    }
+  }
+
   changeAvatar(link){
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
