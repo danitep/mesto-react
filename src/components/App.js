@@ -19,8 +19,7 @@ function App() {
 
   React.useEffect(() => {
     api.getInitialData()
-    .then((res)=>{
-      const [resProfile, resCards] = res;
+    .then(([resProfile, resCards])=>{
       setCurrentUser(resProfile);
       setCards(resCards);
     })

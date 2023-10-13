@@ -9,7 +9,6 @@ export default function EditAvatarPopup(props){
         props.onUpdateAvatar({
           avatar: avatarRef.current.value
         });
-        avatarRef.current.value=''
     } 
     
     React.useEffect(() => {
