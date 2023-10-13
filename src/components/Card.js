@@ -17,7 +17,7 @@ export default function Card(props){
     const isLiked = props.card.likes.some(i => i._id === currentUser._id);
 
     return(
-    <li className="element">
+    <>
         {isOwn && <button className='element__delete' onClick={handleDeleteClick} />} 
         <img 
         src={props.card.link} 
@@ -29,13 +29,13 @@ export default function Card(props){
             <h2 className="element__title">{props.card.name}</h2>
             <div className="element__container">
                 <button 
-                className={`element__like ${isLiked && 'element__like_active'}`} 
+                className={`element__like ${isLiked ? 'element__like_active':''}`} 
                 onClick={handleLikeClick}  
                 type="button"></button>
                 <p className="element__count">{props.card.likes.length}</p>
             </div>
         </div>
-    </li>
+    </>
     
     )
 }

@@ -28,13 +28,16 @@ export default function Main(props){
       <section className="elements" aria-label="Набор фотографий в профиле">
         <ul className="elements__grid">
           {props.cards.map((cardInfo)=>{
-            return <Card 
-            key={cardInfo._id} 
-            card={cardInfo}
-            onCardClick={props.onCardClick}
-            onCardLike={props.onCardLike}
-            onCardDelete={props.onCardDelete}
-            ></Card>
+            return (
+            <li className="element" key={cardInfo._id} >
+              <Card 
+              card={cardInfo}
+              onCardClick={props.onCardClick}
+              onCardLike={props.onCardLike}
+              onCardDelete={props.onCardDelete}
+              ></Card>
+            </li>
+            )
           })}
         </ul>
       </section>

@@ -39,8 +39,8 @@ class Api {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        name: name,
-        about: about
+        name,
+        about
       })
     })
     .then(res => {
@@ -53,8 +53,8 @@ class Api {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
-        name: name,
-        link: link
+        name,
+        link
       })
     })
     .then(res => {
@@ -66,6 +66,9 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: 'DELETE',
       headers: this._headers
+    })
+    .then(res => {
+      return this._getResponseData(res)
     })
   }
 
@@ -121,21 +124,3 @@ const api = new Api({
   }
 });
 export default api;
-/*
-about: "Sailor, researcher"
-avatar: "https://pictures.s3.yandex.net/frontend-developer/common/ava.jpg"
-cohort: "cohort-75"
-name: "Jacques Cousteau"
-_id: "06a637a4e826977941f73c95"
-*/
-
-
-/*
-const api = new Api({
-    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-75',
-    headers: {
-      authorization: '6c4e8e15-fb16-4272-8358-6586683c02aa',
-      'Content-Type': 'application/json'
-    }
-}); 
-*/

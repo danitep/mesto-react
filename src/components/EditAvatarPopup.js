@@ -12,6 +12,10 @@ export default function EditAvatarPopup(props){
         avatarRef.current.value=''
     } 
     
+    React.useEffect(() => {
+        avatarRef.current.value='';
+    }, [props.isOpen]); 
+
     return(
     <PopupWithForm
         onClose={props.onClose}
